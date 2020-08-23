@@ -1,0 +1,40 @@
+.cards-container{
+  width: 100%;
+}
+
+.card {
+  max-width: 200px;
+  cursor: pointer;
+}
+.mat-card-image {
+  object-fit: cover !important;
+}
+.card:hover mat-card-content {
+  height: 50%;
+
+}
+
+.header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+
+mat-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: lightgray;
+  background-color: rgba(0, 0, 0, 0.67);
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+
+  p {
+    width: 95%;
+    margin: .5rem auto;
+  }
+}
+

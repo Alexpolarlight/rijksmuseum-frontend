@@ -1,0 +1,8 @@
+{
+  "/api/*": {
+    "target": "https://www.rijksmuseum.nl/",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

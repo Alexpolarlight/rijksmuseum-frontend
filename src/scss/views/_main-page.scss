@@ -1,0 +1,18 @@
+// templates.components
+
+.main-page-wrap {
+  display: flex;
+  justify-content: center;
+  &__column {
+    flex-direction: column;
+  }
+}
+
+.main-page-content {
+  padding-top: 5.2rem;
+  max-width: 96rem;
+  width: 100%;
+}
+
+
+
