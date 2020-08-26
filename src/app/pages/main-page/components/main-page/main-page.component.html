@@ -2,20 +2,21 @@
   <div class="main-page-content">
     <app-art-objects-filter></app-art-objects-filter>
     <div class="cards-container">
-      <mat-card class="card">
+      <mat-card *ngFor="let object of artObjects$ | async"
+                (click)="openInformationDialog(object)"
+                class="card">
         <img mat-card-image
              tabindex="-1"
-             src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-             alt="Photo of a Shiba Inu">
-        <mat-card-content>
-          <p>
-            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-            bred for hunting.
-          </p>
-        </mat-card-content>
+             [src]="object?.webImage?.url"
+             alt="{{object?.title}}">
+        <div class="card-content">
+          <p>{{object.title}}</p>
+        </div>
       </mat-card>
     </div>
-    <mat-paginator></mat-paginator>
+    <mat-paginator [length]="1000"
+                   [pageSize]="10"
+                   [pageSizeOptions]="[10, 50, 100]">
+    </mat-paginator>
   </div>
 </div>

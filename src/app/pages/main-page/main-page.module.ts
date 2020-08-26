@@ -5,6 +5,7 @@ import {MatButtonModule, MatCardModule, MatIconModule, MatInputModule, MatPagina
 import {ReactiveFormsModule} from '@angular/forms';
 import {ArtObjectsListService} from './services/art-objects-list/art-objects-list.service';
 import { ArtObjectsFilterComponent } from './components/art-objects-filter/art-objects-filter.component';
+import { InformationDialogModule } from './modules/information-dialog/information-dialog.module';
 
 
 
@@ -18,7 +19,8 @@ import { ArtObjectsFilterComponent } from './components/art-objects-filter/art-o
     MatInputModule,
     ReactiveFormsModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    InformationDialogModule.forRoot()
   ],
   exports: [MainPageComponent],
   providers: [ArtObjectsListService]
