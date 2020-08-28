@@ -9,6 +9,6 @@ export class InformationDialogPresenterService {
   constructor(private readonly matDialog: MatDialog) { }
 
   public openInformationDialog(object: ArtObjectModel): MatDialogRef<InformationDialogComponent> {
-    return this.matDialog.open(InformationDialogComponent, { data: object, autoFocus: false})
+    return this.matDialog.open(InformationDialogComponent, { data: object, autoFocus: false, disableClose: true});
   }
 }

@@ -1,1 +1,29 @@
-<p>details-page works!</p>
+<ng-container *ngIf="(artObjectDetails$ | async)?.artObject as object">
+  <div class="details-page-wrap">
+    <div class="details-page-content">
+      <mat-card >
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{object?.title}}</mat-card-title>
+          <mat-card-subtitle>{{object?.longTitle}}</mat-card-subtitle>
+        </mat-card-header>
+        <div class="img-box">
+          <img [src]="object?.webImage?.url" alt="Photo of a Shiba Inu">
+        </div>
+        <mat-card-content>{{object?.plaqueDescriptionEnglish}}</mat-card-content>
+        <p>Tags selection</p>
+        <mat-chip-list aria-label="Tags selection">
+          <mat-chip *ngFor="let tag of object.classification.iconClassDescription" color="primary" selected>{{tag}}</mat-chip>
+        </mat-chip-list>
+        <p>Category selection</p>
+        <mat-chip-list aria-label="Category selection">
+          <mat-chip *ngFor="let category of object.objectTypes" color="accent" selected>{{category}}</mat-chip>
+        </mat-chip-list>
+        <mat-card-actions>
+          <button mat-stroked-button color="warn">LIKE</button>
+          <button [routerLink]="['/']" mat-stroked-button color="primary">BACK TO MAINPAGE</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</ng-container>

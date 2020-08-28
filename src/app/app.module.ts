@@ -10,6 +10,7 @@ import {DetailsPageModule} from './pages/details-page/details-page.module';
 import {TransferHttpModule} from '@gorniv/ngx-transfer-http';
 import {TransferHttpCacheModule} from '@nguniversal/common';
 import {HttpClientModule} from '@angular/common/http';
+import { DetailsStateService } from './shared/services/details-state/details-state.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import {HttpClientModule} from '@angular/common/http';
     TransferHttpCacheModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [DetailsStateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

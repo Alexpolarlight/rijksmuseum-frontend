@@ -1,0 +1,34 @@
+// details-page.component
+
+.details-page-wrap {
+  display: flex;
+  justify-content: center;
+  &__column {
+    flex-direction: column;
+  }
+}
+
+.details-page-content {
+  padding-top: 1.2rem;
+  max-width: 96rem;
+  width: 100%;
+
+  p {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .img-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    img {
+      height: 60rem;
+    }
+  }
+
+  mat-chip-list {
+    margin-bottom: 2rem;
+  }
+}

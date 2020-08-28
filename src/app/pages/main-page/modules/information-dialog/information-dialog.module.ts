@@ -5,6 +5,7 @@ import { InformationDialogPresenterService } from './services/information-dialog
 import { InformationDialogComponent } from './components/information-dialog/information-dialog.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 
 export function InformationDialogPresenterServiceFactory(dialog: MatDialog): InformationDialogPresenterService {
   return new InformationDialogPresenterService(dialog);
@@ -15,6 +16,7 @@ export function InformationDialogPresenterServiceFactory(dialog: MatDialog): Inf
   imports: [
     CommonModule,
     MatButtonModule,
+    MatIconModule,
     MatCardModule,
     MatDialogModule
   ],

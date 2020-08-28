@@ -1,33 +1,40 @@
 <div class="information-dialog-wrapper">
   <div class="information-dialog__header">
-    <div class="information-dialog__header__title">Title</div>
-<!--    <div matDialogClose class="information-dialog__header__close-btn">-->
-<!--      <img src="assets/images/close-btn.svg" alt="Close"/>-->
-<!--    </div>-->
+    <div class="information-dialog__header__title">{{artObject.title}}</div>
+    <div matDialogClose class="information-dialog__header__close-btn">
+      <img src="assets/images/close-btn.svg" alt="Close"/>
+    </div>
   </div>
   <div class="information-dialog__content" mat-dialog-content>
-    <mat-card
-              class="card">
-      <img mat-card-image
-           tabindex="-1"
-           [src]="artObject.webImage.url"
-           alt="{{artObject.title}}">
-      <div class="card-content">
-        <p>{{artObject.title}}</p>
+    <div class="information-dialog__content__info">
+      <mat-card class="card">
+        <img mat-card-image
+             tabindex="-1"
+             [src]="artObject.webImage.url"
+             alt="{{artObject.title}}">
+      </mat-card>
+      <div class="information-dialog__content__long-title">
+        <p>{{artObject.longTitle}}</p>
       </div>
-    </mat-card>
-  <p>{{artObject.longTitle}}</p>
-  <button mat-raised-button
-          color="warn"
-          class="flat-primary-btn">Add to fav list</button>
-  </div>
+    </div>
   <div class="information-dialog__buttons">
-    <button mat-raised-button
-            color="primary"
-            class="flat-primary-btn">View more details</button>
-    <button matDialogClose
-            mat-button
-            color="accent"
-            class="flat-primary-btn">Close</button>
+    <div class="information-dialog__buttons--add-to-fav">
+      <button mat-stroked-button
+              color="warn"
+              aria-label="Favorite"
+              class="information-dialog__buttons--add-to-fav-btn">
+      <mat-icon>favorite</mat-icon>Add to fav list</button>
+    </div>
+    <div class="information-dialog__buttons--actions-btn">
+      <button (click)="navigateToDetailsPage(artObject.objectNumber)"
+              matDialogClose
+              mat-raised-button
+              color="primary"
+              class="flat-primary-btn">View more details</button>
+      <button matDialogClose
+              mat-stroked-button
+              color="primary"
+              class="flat-primary-btn">Close</button>
+    </div>
   </div>
 </div>

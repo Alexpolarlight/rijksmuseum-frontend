@@ -1,15 +1,9 @@
 <div class="find-objects">
   <mat-form-field appearance="outline" class="find-objects__order-by">
     <mat-label>Order by: Type</mat-label>
-    <mat-select [formControl]="orderType">
-      <mat-option>
-        Type1
-      </mat-option>
-      <mat-option>
-        Type2
-      </mat-option>
-      <mat-option>
-        Type3
+    <mat-select [formControl]="orderType" >
+      <mat-option *ngFor="let type of sortByTypes" [value]="type.id">
+        {{type.type}}
       </mat-option>
     </mat-select>
   </mat-form-field>
